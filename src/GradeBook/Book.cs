@@ -17,6 +17,15 @@ namespace GradeBook
             if(grade<= 100 && grade >= 0)
             {
            grades.Add(grade);
+//If GradeAdded is null it means nobody is listening, Noone cared enough to add a method reference into my delegate
+//So I dont need to announce to anybody that a grade was added
+if(GradeAdded!=null)
+{
+
+GradeAdded(this,new EventArgs());
+}
+
+
            return true;
             }else{
 return false;
@@ -54,5 +63,7 @@ public string Name{
 
         private List<double> grades;
         // public string Name;
+
+        public event GradeAddedDelegate GradeAdded;
     }
 }
