@@ -47,7 +47,12 @@ return false;
          return result;
         }
 
+public string Name{
+    get;
+    set;
+}
+
         private List<double> grades;
-        public string Name;
+        // public string Name;
     }
 }

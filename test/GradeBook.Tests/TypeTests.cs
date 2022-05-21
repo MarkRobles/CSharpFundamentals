@@ -1,10 +1,33 @@
 using Xunit;
 
 namespace GradeBook.Tests;
+  public delegate string WriteLogDelegate(string logMessage);
 
 public class TypeTests
 {
 
+//Unit test for Delegate
+[Fact]
+public void WriteLogDelegateCanPointToMethod()
+{
+WriteLogDelegate log;
+
+//long notation
+//I wanna initalize the delegate to point to ReturnMessage Method
+//log = new WriteLogDelegate(ReturnMessage);
+//short notation
+log = ReturnMessage;
+
+var result = log("Hello");
+Assert.Equal("Hello",result);
+}
+
+//The method name or parameter name does not have to match with our delegate name
+//Just its shape - what receive and what return
+string ReturnMessage(string message)
+{
+  return message;
+}
 
 [Fact]
 public void StringBehaveLikeValueTypes()
