@@ -37,4 +37,11 @@ Reference Types vs Value Types:
   
   Sintaxis:
   public delegate string WriteLogDelegate(string logMessage);
-  .
+  
+  Event:
+  Announce that something happens in some way
+  Handle an event:
+  That's what we say when we add a method to this particular event that we want invoked when this class raises that event.
+  So raising the event is really just invoking the delegate, and handling the event is just using that += operator to add a method into  the invovation list
+  
+  
