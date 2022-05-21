@@ -16,5 +16,5 @@ Reference Types vs Value Types:
   The string type is referece type but behaves as a value type
 
   ### ref vs out keyword
-    if you want to pass something by reference you must to use the ref keyword.
-    if you want to pass something by reference you must to use the out if you want that assign a value to that its mandatory keyword.
+    If you want to pass something by reference you must to use the ref keyword.
+    If you want to pass something by reference you must to use the out if you want that assign a value to that its mandatory keyword.
