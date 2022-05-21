@@ -20,4 +20,6 @@ public class BookTests
         Assert.Equal(77.3,result.Low,1);
 
     }
+
+
 }
