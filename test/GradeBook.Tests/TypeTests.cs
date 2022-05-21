@@ -6,27 +6,36 @@ namespace GradeBook.Tests;
 public class TypeTests
 {
 
+int count =0;
 //Unit test for Delegate
 [Fact]
 public void WriteLogDelegateCanPointToMethod()
 {
-WriteLogDelegate log;
+WriteLogDelegate log = ReturnMessage;
 
 //long notation
 //I wanna initalize the delegate to point to ReturnMessage Method
 //log = new WriteLogDelegate(ReturnMessage);
 //short notation
-log = ReturnMessage;
+log += ReturnMessage;
+log += IncrementCount;
 
 var result = log("Hello");
-Assert.Equal("Hello",result);
+Assert.Equal(3,count);
 }
 
 //The method name or parameter name does not have to match with our delegate name
 //Just its shape - what receive and what return
 string ReturnMessage(string message)
 {
+  count++;
   return message;
+}
+
+string IncrementCount(string message)
+{
+  count++;
+  return message.ToLower();
 }
 
 [Fact]
