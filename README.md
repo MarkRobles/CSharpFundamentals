@@ -15,6 +15,6 @@ Reference Types vs Value Types:
   All types that a a struct are value types
   The string type is referece type but behaves as a value type
 
-  ###ref vs out keyword
+  ### ref vs out keyword
     if you want to pass something by reference you must to use the ref keyword.
     if you want to pass something by reference you must to use the out if you want that assign a value to that its mandatory keyword.
