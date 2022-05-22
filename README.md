@@ -45,3 +45,8 @@ Reference Types vs Value Types:
   So raising the event is really just invoking the delegate, and handling the event is just using that += operator to add a method into  the invovation list
   
   
+  Pilars of POO
+  
+  Encapsulation
+  Allow us to hide details about our code with access modififers and properties
+  
