@@ -22,6 +22,8 @@ namespace GradeBook
 if(GradeAdded!=null)
 {
 
+//This line is like say to the delegate:
+//Stay here waiting until some variable point to you baby
 GradeAdded(this,new EventArgs());
 }
 
