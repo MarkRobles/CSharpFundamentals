@@ -48,5 +48,7 @@ Reference Types vs Value Types:
   Pilars of POO
   
   Encapsulation
-  Allow us to hide details about our code with access modififers and properties
-  
+      Allow us to hide details about our code with access modififers and properties
+      It's the key to good software design
+  Inheritance
+  Polymorphism
