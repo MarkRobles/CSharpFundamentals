@@ -52,3 +52,12 @@ Reference Types vs Value Types:
       It's the key to good software design
   Inheritance
   Polymorphism
+  
+  ### Abstrac class
+  We use it to define common members for types
+  Can implement or not methods.
+  
+  ### Interface
+  Is only going to describe the memebers that should be available on a specific type
+  Does not implement methods
+  
