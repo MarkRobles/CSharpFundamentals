@@ -1,66 +1,21 @@
-using System;
-using System.Collections.Generic;
-
-
 namespace GradeBook
-{
-  public  class InMemoryBook:Book
+{ 
+
+    public abstract class Book:NamedObject, IBook
     {
-        public InMemoryBook(string name):base(name)//this access the constructor of base class
+
+         public Book(string name):base(name)//this access the constructor of base class
         {
-            grades = new List<double>();
-            Name = name;
+         
         }
 
-        public override bool AddGrade(double grade)
+        public virtual event GradeAddedDelegate GradeAdded;
+
+        public  abstract bool AddGrade(double grade);
+
+        public virtual Statistics GetStatistics()
         {
-            if(grade<= 100 && grade >= 0)
-            {
-           grades.Add(grade);
-//If GradeAdded is null it means nobody is listening, Noone cared enough to add a method reference into my delegate
-//So I dont need to announce to anybody that a grade was added
-if(GradeAdded!=null)
-{
-
-//This line is like say to the delegate:
-//Stay here waiting until some variable point to you baby
-GradeAdded(this,new EventArgs());
-}
-
-
-           return true;
-            }else{
-return false;
-
-            }
- 
+            throw new System.NotImplementedException();
         }
-
-        public Statistics GetStatistics()
-        {
-
-
-         var result = new Statistics();
-         result.Average = 0.0;
-         result.High = double.MinValue;
-         result.Low = double.MaxValue;
-
-         foreach(var grade in grades)
-         {
-
-             result.Low = Math.Min(grade,result.Low);
-             result.High = Math.Max(grade,result.High);
-             result.Average += grade;
-
-         }
-         result.Average/=grades.Count;
-
-         return result;
-        }
-
-        private List<double> grades;
-        // public string Name;
-
-        public event GradeAddedDelegate GradeAdded;
     }
 }
