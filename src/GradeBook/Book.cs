@@ -4,15 +4,15 @@ using System.Collections.Generic;
 
 namespace GradeBook
 {
-  public  class Book
+  public  class InMemoryBook:Book
     {
-        public Book(string name)
+        public InMemoryBook(string name):base(name)//this access the constructor of base class
         {
             grades = new List<double>();
             Name = name;
         }
 
-        public bool AddGrade(double grade)
+        public override bool AddGrade(double grade)
         {
             if(grade<= 100 && grade >= 0)
             {
@@ -57,11 +57,6 @@ return false;
 
          return result;
         }
-
-public string Name{
-    get;
-    set;
-}
 
         private List<double> grades;
         // public string Name;

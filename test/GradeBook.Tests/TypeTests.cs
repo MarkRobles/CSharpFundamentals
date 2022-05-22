@@ -104,9 +104,9 @@ private void SetInt(int x)
 
     }
     
-private void GetBookSetName(ref Book book,string name)
+private void GetBookSetName(ref InMemoryBook book,string name)
 {
-book= new Book(name);
+book= new InMemoryBook(name);
 
 }
 
@@ -124,9 +124,9 @@ book= new Book(name);
 
     }
     
-private void GetBookSetName(Book book,string name)
+private void GetBookSetName(InMemoryBook book,string name)
 {
-book= new Book(name);
+book= new InMemoryBook(name);
 
 }
  [Fact]
@@ -144,7 +144,7 @@ book= new Book(name);
 
     }
     
-private void SetName(Book book,string name)
+private void SetName(InMemoryBook book,string name)
 {
 book.Name = name;
 
@@ -189,9 +189,9 @@ book.Name = name;
         Assert.True(object.ReferenceEquals(book1,book2));
 
     }
-    Book GetBook(string name)
+    InMemoryBook GetBook(string name)
     {
-return new Book(name);
+return new InMemoryBook(name);
 
     }
 }
