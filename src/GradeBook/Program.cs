@@ -16,8 +16,8 @@ namespace GradeBook
 
 
             Console.WriteLine("Enter a grade or 'q' to quit");
-            var book = new InMemoryBook("Ines del alma mia");
-            book.GradeAdded += OnGradeAdded;
+            IBook book = new DiskBook("El amante japones");
+           // book.GradeAdded += OnGradeAdded;
             //book.GradeAdded-=OnGradeAddedToFile;//unsuscribe
             book.GradeAdded += OnGradeAddedToFile; //So here we are pointing to our delegate that is inisde book class
                                                    //and telling it, "listen to me baby"
@@ -34,6 +34,7 @@ namespace GradeBook
             Console.WriteLine($"The lowest grade is {stats.Low}");
             Console.WriteLine($"The highest grade is {stats.High}");
             Console.WriteLine($"The average grade is {stats.Average:N1}");
+              Console.WriteLine($"The Letter is {stats.Letter}");
 
 
         }
@@ -75,12 +76,12 @@ namespace GradeBook
         //Book Class has no idea about this method hea
         static void OnGradeAdded(object sender,EventArgs args)
         {
-                        Console.WriteLine($"A grade was added");
+                        Console.WriteLine($"A grade was added in memeroy");
         }
 
            static void OnGradeAddedToFile(object sender,EventArgs args)
         {
-                        Console.WriteLine($"A grade was added and we wanna wirte that event in a file oh yeah");
+                        Console.WriteLine($"A grade was added in file");
         }
     }
 }

@@ -41,19 +41,13 @@ return false;
 
 
          var result = new Statistics();
-         result.Average = 0.0;
-         result.High = double.MinValue;
-         result.Low = double.MaxValue;
-
+     
          foreach(var grade in grades)
          {
-
-             result.Low = Math.Min(grade,result.Low);
-             result.High = Math.Max(grade,result.High);
-             result.Average += grade;
+            result.Add(grade);
 
          }
-         result.Average/=grades.Count;
+
 
          return result;
         }
